@@ -1,0 +1,5 @@
+Lighter Brown/Cards: R:145 G:127 B:107
+Light Brown/Player Name: R:120 G:108 B:92 
+Gray/Drop-Down Menu: R:19 G:21 B:23
+
+*Change OPACITY w/ alpha val*

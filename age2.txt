@@ -1,0 +1,21 @@
+Brickyard;brown;2;coin; ; 
+Foundry;brown;2;coin; ; 
+Quarry;brown;2;coin; ; 
+Sawmill;brown;2;coin; ; 
+Glassworks;silver;2; ; ; 
+Loom;silver;2; ; ; 
+Press;silver;2; ; ; 
+Dispensary;green;2;ore, ore, glass;Arena, Lodge;Apothecary
+Laboratory;green;2;clay, clay, papyrus;Siege Workshop, Observatory;Workshop
+Library;green;2;stone, stone, cloth;Senate, University;Scriptorium
+School;green;2;wood, papyrus;Academy, Study; 
+Aqueduct;blue;2;stone, stone, stone; ;Baths
+Courthouse;blue;2;clay, clay, cloth; ;Scriptorium
+Statue;blue;2;wood, ore, ore;Gardens;Theater
+Temple;blue;2;wood, clay, glass;Pantheon;Altar
+Archery Range;red;2;wood, wood, ore; ;Workshop
+Stables;red;2;ore, clay, wood; ;Apothecary
+Walls;red;2;stone, stone, stone;Fortifications; 
+Caravansery;gold;2;wood, wood;Lighthouse;Marketplace
+Forum;gold;2;clay, clay;Haven;East Trading Post, West Trading Post
+Vineyard;gold;2; ; ; 

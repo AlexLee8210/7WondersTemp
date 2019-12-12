@@ -1,0 +1,26 @@
+Academy;green;3;stone, stone, stone, glass; ;School
+Lodge;green;3;clay, clay, cloth, papyrus; ;Dispensary
+Observatory;green;3;ore, ore, glass, cloth; ;Laboratory
+Study;green;3;wood, papyrus, cloth; ;School
+University;green;3;wood, wood, papyrus, glass; ;Library
+Gardens;blue;3;wood, clay, clay; ;Statue
+Palace;blue;3;glass, papyrus, cloth, clay, wood, ore, stone; ; 
+Pantheon;blue;3;clay, clay, ore, papyrus, cloth, glass; ;Temple
+Senate;blue;3;ore, stone, wood, wood; ;Library
+Town Hall;blue;3;glass, ore, stone, stone; ; 
+Arsenal;red;3;ore, wood, wood, cloth; ; 
+Fortifications;red;3;stone, ore, ore, ore; ;Walls
+Siege Workshop;red;3;wood, clay, clay, clay; ;Laboratory
+Arena;gold;3;ore, stone, stone; ;Dispensary
+Haven;gold;3;cloth, ore, wood; ;Forum
+Lighthouse;gold;3;glass, stone; ;Caravansery
+Builders Guild;purple;3;stone, stone, clay, clay, glass; ; 
+Craftsmens Guild;purple;3;ore, ore, stone, stone; ; 
+Magistrates Guild;purple;3;wood, wood, wood, stone, cloth; ; 
+Philosophers Guild;purple;3;clay, clay, clay, cloth, papyrus; ; 
+Scientists Guild;purple;3;wood, wood, ore, ore, papyrus; ; 
+Shipowners Guild;purple;3;wood, wood, wood, papyrus, glass; ; 
+Spies Guild;purple;3;clay, clay, clay, glass; ; 
+Strategists Guild;purple;3;ore, ore, stone, cloth; ; 
+Traders Guild;purple;3;cloth, papyrus, glass; ; 
+Workers Guild;purple;3;ore, ore, clay, stone, wood; ; 

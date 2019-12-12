@@ -16,7 +16,6 @@ public class MainFrame extends JFrame implements MouseListener {
 		this.gs = gs;
 		setupGraphics();
 		addMouseListener(this);
-
 	}
 
 	public void setupGraphics() throws IOException, FontFormatException {
@@ -80,7 +79,7 @@ public class MainFrame extends JFrame implements MouseListener {
 					repaint();
 					return;
 				}
-		if(gs.getRound() == 7) {
+		if(gs.isEndOfRound()) {
 			gs.resetRound();
 			repaint();
 		}

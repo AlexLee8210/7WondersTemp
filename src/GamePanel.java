@@ -97,7 +97,7 @@ public class GamePanel extends JPanel {
 						mp = "1";
 					else if(gs.getAge() == 2)
 						mp = "3";
-					g.drawString(result + " won! Gained " + mp + " military points.", 500, a+=75);
+					g.drawString("Player " + result + " won! Gained " + mp + " military points.", 500, a+=75);
 				}
 			}
 			g.drawString(res, 500, a+=75);
@@ -236,7 +236,7 @@ public class GamePanel extends JPanel {
 						try {
 							g.drawImage( ImageIO.read(getClass()
 											.getResource("/cards/" + (c.getName()).toLowerCase() + ".png")),
-									50 + a + b * 30, 175 + b * 50, 108, 165, this);
+									50 + a + b * 20, 175 + b * 35, 108, 165, this);
 							//System.out.println((0 + a + b * 30) + ", " + (200 + b * 50));
 						} catch (Exception e) {
 							e.printStackTrace();
@@ -263,7 +263,7 @@ public class GamePanel extends JPanel {
 						try {
 							g.drawImage( ImageIO.read(getClass()
 											.getResource("/cards/" + (c.getName()).toLowerCase() + ".png")),
-									1010 + a + b * 30, 175 + b * 50, 108, 165, this);
+									1010 + a + b * 20, 175 + b * 35, 108, 165, this);
 							System.out.println((0 + a + b * 30) + ", " + (200 + b * 50));
 						} catch (Exception e) {
 							e.printStackTrace();

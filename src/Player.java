@@ -410,8 +410,10 @@ public class Player {
 	public int getWP() { return warPoints; }
 	public Wonder getWonder() { return wonder; }
 	
-	public boolean canBuildWithTrade(Card card) {
-		ArrayList<String> cost = card.getCost();
+	public boolean canBuildWithTrade(ArrayList<String> cost1) {
+		ArrayList<String> cost = new ArrayList<>();
+		for(String k: cost1)
+			cost.add(k);
 		//check through normal resources
 		if(cost.size() == 1 && cost.get(0).equals(" "))
 			return true;
@@ -515,7 +517,8 @@ public class Player {
 		}
 		if(cost.size() == 0 && coins - coinCost >= 0)
 			return true;
-		
+		else if(cost.size() == 0)
+			return false;
 		
 		//check through left choice res
 		//creates possible combinations
@@ -781,7 +784,7 @@ public class Player {
 		ArrayList<String> res = new ArrayList<>();
 		for(String k: array)
 			res.add(k);
-		return check(res);
+		return canBuildWithTrade(res);
 	}
 	
 	public LinkedHashMap<String, ArrayList<Card>> getCards() { return cards; }

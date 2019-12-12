@@ -21,46 +21,13 @@ public class BoardGUI {
 
 	public BoardGUI() throws IOException, FontFormatException {
 		gs = new GameState();
-		nextAge();
+		gs.nextAge();
 		mf = new MainFrame("7 Wonders", gs);
 		mf.addMouseListener((MouseListener) this);
 		endOfAge = false;
 	}
 
-	public void createDeck() throws IOException {
-		BufferedReader br = new BufferedReader(new FileReader("age" + gs.getAge() + ".txt"));
-		StringTokenizer st;
-		deck = new ArrayList<>();
-		ArrayList<ActionCard> guildCards = new ArrayList<>();
-		while (br.ready()) {
-			st = new StringTokenizer(br.readLine(), ";");
-			String name = st.nextToken();
-			String color = st.nextToken();
-			String age = st.nextToken();
-			if (color.equals("brown") || color.equals("silver") || name.equals("caravansery") || name.equals("Forum"))
-				deck.add(new ResourceCard(name, color, age, st.nextToken(), st.nextToken(), st.nextToken()));
-			else if (color.equals("blue"))
-				deck.add(new BlueCard(name, color, age, st.nextToken(), st.nextToken(), st.nextToken()));
-			else if (color.equals("red"))
-				deck.add(new RedCard(name, color, age, st.nextToken(), st.nextToken(), st.nextToken()));
-			else if (color.equals("green"))
-				deck.add(new GreenCard(name, color, age, st.nextToken(), st.nextToken(), st.nextToken()));
-			else if (color.equals("gold"))
-				deck.add(new ActionCard(name, color, age, st.nextToken(), st.nextToken(), st.nextToken()));
-			else {
-				guildCards.add(new ActionCard(name, color, age, st.nextToken(), st.nextToken(), st.nextToken()));
-			}
-		}
 
-		if (gs.getAge() == 3) {
-			Collections.shuffle(guildCards);
-			for (int i = 4; i >= 0; i--)
-				guildCards.remove(i);
-			for (Card c : guildCards)
-				deck.add(c);
-		}
-		Collections.shuffle(deck);
-	}
 
 	public void printDeck() {
 		Collections.sort(deck);
@@ -69,46 +36,13 @@ public class BoardGUI {
 			System.out.println(c);
 	}
 
-	public void nextAge() {
-		if (gs.getAge() == 3) {
-			endOfAge = true;
-			return;
-		}
-		LinkedHashMap<Player, ArrayList<Card>> ph = gs.getPlayerHands();
 
-		gs.updateState(gs.getAge() + 1);
-		gs.updateState(ph);
-		try {
-			createDeck();
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		deal();
-	}
 
 	public ArrayList<Card> getDeck() {
 		return deck;
 	}
 
-	public void deal() {
-		Collections.shuffle(deck);
-		LinkedHashMap<Player, ArrayList<Card>> ph = gs.getPlayerHands();
-		for (int i = 0; i < 3; i++)
-			ph.put(gs.getPlayers()[i], new ArrayList<>());
-		Iterator<Player> iter = ph.keySet().iterator();
-		for (int i = 0; i < 3; i++) {
-			Player cp = iter.next();
-			ArrayList<Card> cc = ph.get(cp);
-			for (int j = 6; j >= 0; j--) {
-				cc.add(deck.remove(j));
-				ph.put(cp, cc);
-			}
-			Collections.sort(ph.get(cp));
-		}
-		// out.println(ph);
-		gs.updateState(ph);
-		// out.println(gs.getPlayerHands());
-	}
+
 
 	public void printPlayerHand(int pNum) {
 		out.println(gs.getPlayerHands().get(gs.getPlayer(pNum)));
@@ -153,8 +87,6 @@ public class BoardGUI {
 
 	public void run() throws IOException, FontFormatException {
 		for(int i = 0; i < 3; i++) {
-			createDeck();
-			deal();
 			mf.updateGraphics();
 			for (int a = 0; a < 6; a++) {
 				for(int j = 0; j < 3; j++) {
@@ -166,8 +98,7 @@ public class BoardGUI {
 			}
 			for(Player p: gs.getPlayerHands().keySet()) //adding last remaining card to discard pile
 				gs.getDiscard().add(gs.getPlayerHands().get(p).get(0));
-			wageWar();
-			nextAge();
+			//gs.nextAge();
 			mf.updateGraphics();
 			if (endOfAge == true)
 				gs.setEnd(endOfAge);
